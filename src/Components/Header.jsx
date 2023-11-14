@@ -1,8 +1,21 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
 const Header = () => {
   const [active, Setactive] = useState('')
+
+  // to edit the active link using back ground
+  const location = useLocation();
+
+  useEffect(() => {
+    // Extract the last part of the pathname to determine the active state
+    const pathname = location.pathname;
+    const parts = pathname.split('/').filter((part) => part !== '');
+    const currentActive = parts.length > 0 ? parts[parts.length - 1] : '';
+
+    // Update the active state
+    Setactive(currentActive);
+  }, [location.pathname]);
   const handleactive = (activstatus) => {
     Setactive(activstatus)
   }
