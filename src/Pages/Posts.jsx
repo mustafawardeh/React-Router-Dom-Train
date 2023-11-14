@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Head from '../Components/Head'
 
+
+
 const Posts = () => {
   const [Posts, SetPosts] = useState([])
   const [Loader, SetLoader] = useState(true)
@@ -15,13 +17,14 @@ const Posts = () => {
       .then(SetLoader(false))
   }
   return (
-    <div className='bg-white'>
+    <div className='bg-white pb-10'>
       <Head title='posts' />
       <div className='xl:px-[150px] lg:px-[100px] md:px-[80px] px-[50px]  my-8'>
         {
           Loader ?
-            (<div>
-              Loading...
+            (<div className='w-full h-[400px] flex flex-col space-y-2 justify-center items-center'>
+              <div className="w-10 h-10 border-t-4 border-blue-500 border-solid rounded-full animate-spin"/>
+              <p>Loading</p>
             </div>)
             :
             (
