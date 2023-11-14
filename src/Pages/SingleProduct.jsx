@@ -3,7 +3,6 @@ import { Link, useLocation, useParams } from 'react-router-dom'
 import Head from '../Components/Head'
 
 const SingleProduct = () => {
-  const { productId } = useParams()
   const { state } = useLocation()
   const product = state?.item || {}
 
