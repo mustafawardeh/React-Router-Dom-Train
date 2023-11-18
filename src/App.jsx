@@ -6,6 +6,7 @@ import Products from './Pages/Products.jsx'
 import SingleProduct from './Pages/SingleProduct.jsx'
 import Posts from './Pages/Posts.jsx'
 import About from './Pages/About.jsx'
+import ErrorPage from './Pages/ErrorPage.jsx'
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
               <Route path='/products' element={<Products />} />
               <Route path='/products/:productId' element={<SingleProduct />} />
               <Route path='/posts' element={<Posts />} />
-              <Route path='/*' element={<Error />} />
+              <Route path='/*' element={<ErrorPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
